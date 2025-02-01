@@ -13,3 +13,24 @@ In this project, you will write a basic Dockerfile to create a Docker image. Whe
 You can learn more about writing a Dockerfile [here](https://docs.docker.com/engine/reference/builder/).
 
 If you are looking to build a more advanced version of this project, you can consider adding the ability to pass your name to the Docker image as an argument, and have the Docker image print “Hello, [your name]!” instead of “Hello, Captain!”.
+
+## Solution
+
+1. Build the container without a custom name argument:
+   ```bash
+   docker build -t hello-captain .
+   ```
+2. Run the container:
+   ```bash
+   docker run --rm hello-captain  
+   Hello, Captain!
+   ```
+3. Build the container with a custom build argument:
+   ```bash
+   docker build --build-arg NAME=Alice -t hello-captain .
+   ```
+4. Run the container:
+   ```bash
+   docker run --rm hello-captain  
+   Hello, Alice!
+   ```
